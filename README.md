@@ -1,7 +1,7 @@
 # ParticleFilters
 
 [![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://JuliaPOMDP.github.io/ParticleFilters.jl/latest)
-[![Build Status](https://github.com/wbrannon/ParticleFilters.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/ParticleFilters.jl)
+[![Build Status](https://github.com/wbrannon/ParticleFilters.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/wbrannon/ParticleFilters.jl)
 [![codecov.io](http://codecov.io/github/JuliaPOMDP/ParticleFilters.jl/coverage.svg?branch=master)](http://codecov.io/github/JuliaPOMDP/ParticleFilters.jl?branch=master)
 
 ![particles.gif](/img/particles.gif)
