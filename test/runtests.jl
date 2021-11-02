@@ -98,27 +98,43 @@ end
     @test isapprox(value(policy, b), -29.4557)
 end
 
-
-is_ci = get(ENV, "CI", "false") == "true"
-is_travis = get(ENV, "TRAVIS", "false") == "true"
-
-@show is_ci
-@show is_travis
-
-@warn("Notebook smoke testing is disabled on JuliaCI. We should re-enable it asap")
-
-if !is_ci || is_travis
-    @testset "data series" begin
-        cd("../notebooks") do
-            @nbinclude("../notebooks/Filtering-a-Trajectory-or-Data-Series.ipynb")
-        end
-    end
-
-    @testset "feedback" begin
-        @nbinclude("../notebooks/Using-a-Particle-Filter-for-Feedback-Control.ipynb"; softscope=true)
-    end
-
-    @testset "pomdps" begin
-        @nbinclude("../notebooks/Using-a-Particle-Filter-with-POMDPs-jl.ipynb")
+@testset "data series" begin
+    cd("../notebooks") do
+        @nbinclude("../notebooks/Filtering-a-Trajectory-or-Data-Series.ipynb")
     end
 end
+
+@testset "feedback" begin
+    @nbinclude("../notebooks/Using-a-Particle-Filter-for-Feedback-Control.ipynb"; softscope=true)
+end
+
+@testset "pomdps" begin
+    @nbinclude("../notebooks/Using-a-Particle-Filter-with-POMDPs-jl.ipynb")
+end
+
+
+
+
+# is_ci = get(ENV, "CI", "false") == "true"
+# is_travis = get(ENV, "TRAVIS", "false") == "true"
+
+# @show is_ci
+# @show is_travis
+
+# @warn("Notebook smoke testing is disabled on JuliaCI. We should re-enable it asap")
+
+# if !is_ci || is_travis
+#     @testset "data series" begin
+#         cd("../notebooks") do
+#             @nbinclude("../notebooks/Filtering-a-Trajectory-or-Data-Series.ipynb")
+#         end
+#     end
+
+#     @testset "feedback" begin
+#         @nbinclude("../notebooks/Using-a-Particle-Filter-for-Feedback-Control.ipynb"; softscope=true)
+#     end
+
+#     @testset "pomdps" begin
+#         @nbinclude("../notebooks/Using-a-Particle-Filter-with-POMDPs-jl.ipynb")
+#     end
+# end
